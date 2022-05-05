@@ -12,12 +12,9 @@ let currName;
 document.getElementById("headings").style.color = "orange";
 
 function csvToArray(str, delimiter = ",") {
-    // slice from start of text to the first \n index
-    // use split to create an array from string by delimiter
+    // slice
+    // recordar que en otros compus es solo /n
     const headers = str.slice(0, str.indexOf("\r\n")).split(delimiter);
-
-    // slice from \n index + 1 to the end of the text
-    // use split to create an array of each csv value row
     const rows = str.slice(str.indexOf("\n") + 1).split("\r\n");
     console.log(rows);
 
@@ -40,7 +37,6 @@ function csvToArray(str, delimiter = ",") {
             columnaJ: itemColum[10]});
     }
 
-    // return the array
     return info;
 }
 
@@ -126,8 +122,7 @@ compareBtn.addEventListener("click", function () {
         currName++;
     }
 
-
-    //QUITARLE LA SIMILITUD COSENO PROPIA
+    //Coseno
     for (let i = 0; i < cosineArr.length; i++) {
         if (cosineArr[i][1] >= 0.99) {
             cosineArr.splice(i, 1);
@@ -145,7 +140,6 @@ compareBtn.addEventListener("click", function () {
         names += name;
     });
     resultTxt.innerHTML = `Los ${k} vecinos más cercanos de ${name1}, son:${names}`
-    //console.log(KNNArr);
 });
 
 function cosineSimil(Arr1, Arr2) {
