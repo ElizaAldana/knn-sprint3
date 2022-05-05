@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint3</title>
+</head>
+
+<body>
+    <header>
+        <h2>K-Nearest Neighbors<p>&#128512;</p></h2>
+        <h3>“2 usuarios son similares en la medida en que sus características son similares”</h3>
+    </header>
+    <form id="calculator">
+        <input type="file" id="excel" accept=".csv" />
+        <br />
+        <input type="submit" value="Upload" />
+    </form>
+
+    <!--Para que cree tabla automático con los items del excel-->
+    <table>
+        <thead id="headings">
+            <tr>
+                <th id="Persona">Usuario</th>
+                <th id="PIÑA">Piña</th>
+                <th id="TOCINETA">Tocineta</th>
+                <th id="MADURO">Maduro</th>
+                <th id="MAIZ">Maíz</th>
+                <th id="JAMON">Jamón</th>
+                <th id="POLLO">Pollo</th>
+                <th id="CHORIZO">Chorizo</th>
+                <th id="PEPPERONI">Pepperoni</th>
+                <th id="CHAMPIÑON">Champiñón</th>
+                <th id="TOMATE">Tomate</th>
+            </tr>
+        </thead>
+        <tbody id="results">
+
+        </tbody>
+    </table>
+
+
+    <select id="Name1"></select>
+    <!--Mas cerca del coseno, mas vecino-->
+    <input id="KNN" type="number" placeholder="Número de vecinos">
+    <button id="compare">Calcular cercanía</button>
+    <p id="result">Elige una persona y mira quienes son sus vecinos más cercanos</p>
+</body>
+
+<script src="./index.js"></script>
+
+</html>
